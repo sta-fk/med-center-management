@@ -1,0 +1,33 @@
+@import '../../../styles/index.scss';
+
+@include desktop {
+   .content.price-list {
+      .root {
+         @include base-card(auto, 56px, 35px, 35px 0, 0 25px);
+         @include flexible(row, center, space-between);
+         cursor: pointer;
+         font-size: 20px;
+
+         &:first-child {
+            margin-top: 0;
+         }
+
+         &:hover {
+            animation: link--weight .5s forwards;
+         }
+
+         &.active {
+            margin-bottom: 0;
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content.price-list {
+      .root {
+         @include base-card(auto, 50px, 35px, 25px 0, 0 25px);
+         font-size: 18px;
+      }
+   }
+}

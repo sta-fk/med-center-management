@@ -1,0 +1,151 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   .content.appointment.container {
+      h2 {
+         font-size: 20px;
+         font-family: $font-head;
+         font-weight: 400;
+         margin: 7px 0;
+      }
+
+      .appointment-form {
+         margin-top: 30px;
+
+         select,
+         input[type=date] {
+            @include base-card(calc(65%), 56px, 7px, 15px 0 35px, 0 10px 0 30px);
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding-right: 25px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            color: rgba($black, 0.5);
+
+            &:focus {
+               color: $black;
+            }
+
+            &:disabled {
+               border: 1px solid rgba($black, 0.5);
+               background: rgba($black, 0.15);
+               color: rgba($black, 0.5);
+            }
+         }
+
+         select option {
+            font-size: 16px;
+         }
+
+         label {
+            display: block;
+            padding: 0 0 0 30px;
+            font-size: 20px;
+            font-family: $font-head;
+         }
+
+         .invalid-data {
+            font-family: $font-head;
+            font-size: 16px;
+            font-weight: 500;
+            color: $red;
+            margin-top: 15px;
+         }
+
+         .appointment-submit {
+            display: block;
+            width: 215px;
+            margin-top: 15px;
+            padding: 15px 25px;
+            background-color: $blue;
+            border: none;
+            border-radius: 125px;
+
+            font-family: $font-head;
+            font-size: 18px;
+            font-weight: 500;
+            color: $white;
+
+            &:hover {
+               cursor: pointer;
+               @include default-btn-color();
+               animation: default-btn--color .35s forwards;
+            }
+
+            &:disabled {
+               border: 1px solid rgba($black, 0.5);
+               background: rgba($black, 0.15);
+               color: rgba($black, 0.5);
+
+               &:hover {
+                  cursor: auto;
+                  border: 1px solid rgba($black, 0.5) !important;
+                  background: rgba($black, 0.15) !important;
+                  color: rgba($black, 0.5) !important;
+               }
+            }
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content.appointment.container {
+      .appointment-form {
+         width: 100%;
+
+         select,
+         input[type=date] {
+            @include base-card(calc(100%), 56px, 7px, 15px 0 35px, 0 10px 0 30px);
+            font-size: 18px;
+         }
+
+         select option {
+            font-size: 12px;
+         }
+
+         .appointment-submit {
+            display: block;
+            margin: 30px auto 15px;
+         }
+
+         .invalid-data {
+            text-align: center;
+            margin: 0;
+         }
+      }
+   }
+}
+
+@include tablet {
+   .content.appointment.container {
+      h1 {
+         font-size: 32px;
+         margin-top: 30px;
+      }
+
+      .appointment-form {
+         width: 100%;
+         margin-top: 40px;
+
+         select,
+         input[type=date] {
+            @include base-card(calc(100%), 56px, 7px, 15px 0 35px, 0 15px);
+            font-size: 18px;
+         }
+
+         select option {
+            font-size: 10px;
+         }
+
+         label {
+            padding: 0 0 0 20px;
+         }
+      }
+   }
+}

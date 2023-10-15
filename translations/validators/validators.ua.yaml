@@ -1,0 +1,18 @@
+api:
+  email:
+    email_exists: Ви вже маєте акаунт.
+    email_invalid: Будь ласка, введіть адресу в форматі example@mail.ua.
+    email_forbidden: Ваш поштовий сервіс внесений до списку санкційних. Будь ласка, введіть інший email.
+  password:
+    password_invalid: Переконайтесь у надійності паролю.
+  contacts:
+    phone_number_incorrect: Введіть український номер у форматі 380*******
+  address:
+    zip_incorrect: Поштовий індекс некоректний. Має 5 цифр
+  documents:
+    inn_incorrect: Ідентифікаційний номер платника податків некоректний. Має 10 цифр
+    idcard_number_incorrect: Номер паспорту невірний. Має 9 цифр
+    passport_series_incorrect: Серія паспорту невірна. Має дві українські літери
+    passport_number_incorrect: Номер паспорту невірний. Має 6 цифр
+  appointment:
+    unavailable_time: Час зайнятий або недоступний

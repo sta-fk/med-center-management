@@ -1,0 +1,129 @@
+@import '../../styles/index.scss';
+
+// .default.btn {
+//    @include flexible(row, center, center);
+
+//    font-family: $font-head;
+//    font-size: 20px;
+//    font-weight: 500;
+
+//    width: 300px;
+//    height: 50px;
+//    border: none;
+//    border-radius: 28px;
+//    background-color: $blue;
+
+//    &:hover {
+//       cursor: pointer;
+//       @include default-btn-color();
+//       animation: default-btn--color .35s forwards;
+//    }
+
+//    .btn__link {
+//       color: $white;
+//       text-decoration: none;
+//    }
+// }
+
+// .default.btn--small {
+//    @include flexible(row, center, center);
+
+//    font-family: $font-head;
+//    font-size: 20px;
+//    font-weight: 500;
+
+//    width: 300px;
+//    height: 50px;
+//    border: none;
+//    border-radius: 28px;
+//    background-color: $blue;
+
+//    &:hover {
+//       cursor: pointer;
+//       @include default-btn-color();
+//       animation: default-btn--color .35s forwards;
+//    }
+
+//    .btn__link {
+//       color: $white;
+//       text-decoration: none;
+//    }
+// }
+
+@include desktop {
+   .default.btn--small {
+      @include flexible(row, center, center);
+      margin-right: 0;
+      margin-top: 65px;
+      margin-left: auto;
+      font-family: $font-head;
+      font-size: 20px;
+      font-weight: 500;
+      width: 210px;
+      height: 50px;
+      background-color: $blue;
+      border: none;
+      border-radius: 28px;
+      color: $white;
+
+      &:hover {
+         cursor: pointer;
+         @include default-btn-color();
+         animation: default-btn--color .35s forwards;
+      }
+
+      .link {
+         @include reset-link-style($white);
+      }
+   }
+
+   .default.btn {
+      @include flexible(row, center, center);
+
+      font-family: $font-head;
+      font-size: 20px;
+      font-weight: 500;
+
+      width: 300px;
+      height: 50px;
+      border: none;
+      border-radius: 28px;
+      background-color: $blue;
+
+      &:hover {
+         cursor: pointer;
+         @include default-btn-color();
+         animation: default-btn--color .35s forwards;
+      }
+
+      .btn__link {
+         color: $white;
+         text-decoration: none;
+      }
+   }
+}
+
+@include laptop {
+   .default.btn--small {
+      display: block !important;
+      margin-top: 45px;
+      font-family: $font-head;
+      font-size: 18px;
+      width: 145px;
+      height: 37px;
+      background-color: $blue;
+      border: none;
+      border-radius: 28px;
+   }
+}
+
+@include mobile {
+   .default.btn--small {
+      margin-top: 35px;
+      margin-right: auto;
+   }
+
+   .default.btn {
+      width: 100%;
+   }
+}

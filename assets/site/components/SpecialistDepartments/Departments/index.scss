@@ -1,0 +1,85 @@
+@import '../../../styles/index.scss';
+
+@include desktop {
+   .content.specialists.departments {
+      height: 550px;
+      width: 365px;
+      margin: 25px 50px 0 0;
+
+      nav {
+         width: 100% !important;
+         height: inherit;
+         overflow-y: auto;
+         scrollbar-width: thin;
+         padding: 15px;
+
+         .department.item {
+            @include base-card(auto, 56px, 35px, 35px 0, 0 25px);
+            @include flexible(row, center, space-between);
+            cursor: pointer;
+            font-size: 20px;
+
+            &.active {
+               background: $green;
+            }
+
+            &:first-child {
+               margin-top: 0;
+            }
+
+            &:hover {
+               animation: link--weight .5s forwards;
+            }
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content.specialists.departments {
+      width: 400px;
+
+      nav {
+         .department.item {
+            font-size: 18px;
+         }
+      }
+   }
+}
+
+@include tablet {
+   .content.specialists.departments {
+      nav {
+         .department.item {
+            @include base-card(auto, 42px, 35px, 25px 0, 0 25px);
+            font-size: 16px;
+         }
+      }
+   }
+}
+
+@include tablet {
+   .content.specialists.departments {
+      width: 100% !important;
+      height: auto;
+
+      nav {
+         width: auto !important;
+         padding: 15px;
+         max-height: 40vh;
+         overflow-y: auto;
+
+         .department.item {
+            .arrow {
+               display: none;
+            }
+
+            &.active {
+               background: $green;
+               // outline: 4px solid $green;
+               // outline-offset: -4px;
+            }
+         }
+      }
+   }
+}

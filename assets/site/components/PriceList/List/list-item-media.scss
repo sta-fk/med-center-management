@@ -1,0 +1,108 @@
+@import '../../../styles/index.scss';
+
+@include desktop {
+   .content.price-list.list {
+      .row.item {
+         margin: 10px 0;
+
+         &.header {
+            margin-bottom: 30px;
+            color: rgba($black, 50%);
+         }
+
+         .name {
+            text-align: left;
+            display: inline-block;
+            width: 80%;
+         }
+
+         .code,
+         .price {
+            vertical-align: top;
+            display: inline-block;
+            width: 10%;
+            text-align: center;
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content.price-list.list {
+      .row.item {
+         &.header {
+            margin: 0 0 20px 0;
+         }
+
+         .name {
+            width: 70%;
+         }
+
+         .code,
+         .price {
+            width: 15%;
+         }
+      }
+   }
+}
+
+@media(max-width: 815px) {
+   .content.price-list.list {
+      .row.item {
+         margin: 10px 0 10px 15px;
+
+         &.root-category {
+            margin: 20px 0 10px 0;
+         }
+
+         .name {
+            text-align: left;
+            display: inline-block;
+            width: 70%;
+
+            &.category {
+               font-weight: 600;
+            }
+         }
+
+         .code,
+         .price {
+            vertical-align: top;
+            display: inline-block;
+            width: 15%;
+            text-align: center;
+         }
+      }
+   }
+}
+
+@include mobile {
+   .content.price-list.list {
+      .row.item {
+         margin: 7px 0 7px 10px;
+         font-size: 14px;
+
+         &.header {
+            font-size: 16px;
+         }
+
+         &.root-category {
+            margin: 20px 0 7px 0;
+            font-size: 16px;
+         }
+
+         .name {
+            width: 60%;
+         }
+
+         .name.category {
+            width: 100%;
+         }
+
+         .code,
+         .price {
+            width: 20%;
+         }
+      }
+   }
+}

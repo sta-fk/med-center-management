@@ -1,0 +1,112 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   .content.s-department.container {
+      .s-department-block {
+         @include flexible(column, center, center);
+
+         .s-row {
+            @include flexible(row, stretch, flex-start);
+            margin-top: 35px;
+            width: 100%;
+
+            .s-reference {
+               width: 100%;
+               height: 50vh;
+               text-align: center;
+
+               h3 {
+                  font-size: 28px;
+                  margin-bottom: 15px;
+                  padding: 0;
+               }
+
+               p {
+                  font-size: 21px;
+                  margin: 0 0 50px 0;
+               }
+
+               .s-btn-pricelist {
+                  font-size: 21px;
+
+                  .link {
+                     @include reset-link-style($black);
+
+                     &:hover {
+                        animation: link--weight .5s forwards;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@include laptop {
+
+   .content.s-department.container {
+      .s-department-block {
+         .s-row {
+            .s-reference {
+               h3 {
+                  margin-top: 30px;
+               }
+            }
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content.s-department.container {
+      .s-department-block {
+         @include flexible(column, flex-start, space-between);
+         margin-top: 0;
+
+         .s-row {
+            @include flexible(row, stretch, space-between);
+            margin-top: 35px;
+
+            .s-reference {
+               h3 {
+                  font-size: 24px;
+               }
+            }
+         }
+      }
+   }
+}
+
+@include mobile {
+   .content.s-department.container {
+      width: 100%;
+
+      .s-department-block {
+         @include flexible(column, flex-start, space-between);
+         width: auto;
+         margin-top: 25px;
+
+         .s-row {
+            @include flexible(column, flex-start, space-between);
+            margin-top: 0;
+            width: auto;
+
+            .s-reference {
+               h3 {
+                  font-size: 21px;
+               }
+
+               p {
+                  font-size: 18px;
+                  margin: 0 0 50px 0;
+               }
+
+               .s-btn-pricelist {
+                  font-size: 18px;
+               }
+            }
+         }
+      }
+   }
+}

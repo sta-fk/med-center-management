@@ -1,0 +1,35 @@
+@include desktop {
+   .content.news-pagination {
+      margin: 50px 50px 0 50px;
+      text-align: center;
+      font-family: $font-head;
+      font-weight: 400;
+
+      .btn {
+         display: inline;
+         cursor: pointer;
+
+         @include link-weight();
+
+         &:hover {
+            animation: link--weight .5s forwards;
+         }
+
+         &.active {
+            position: relative;
+
+            &:before {
+               content: "";
+               position: absolute;
+               top: 30px;
+               background: $black;
+               width: 5px;
+               height: 5px;
+               border-radius: 100%;
+               left: calc(50% - 10px);
+               opacity: 100;
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,27 @@
+breakpoints check
+
+my desktop
+1520 х 657	xxl - desktop
+
+laptop
+1366 x 768	xl - laptop
+
+ipad
+810 x 1080	lg - ipad
+1080 x 810	xl - laptop
+1024 x 768	lg - ipad
+
+iphone 12/13 pro max
+428 x 926	sm - mobile
+926 x 428	lg - ipad
+
+iphone SE 2ng gen
+667 x 375	md - tablet
+375 x 667	sm - mobile
+
+// breakpoints
+xxl: 1920px;
+xl: 1367px;
+lg: 1080px;
+md: 767px;
+sm: 576px;

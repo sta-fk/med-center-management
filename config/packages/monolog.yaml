@@ -1,0 +1,68 @@
+monolog:
+    handlers:
+        catalog_api:
+            type: rotating_file
+            date_format: 'Y-m-d'
+            max_files: 60
+            level: debug
+            path: '%kernel.logs_dir%/catalog/catalog_api.log'
+            channels: [ 'catalog_api' ]
+        employee_ehealth:
+            type: rotating_file
+            date_format: 'Y-m-d'
+            max_files: 60
+            level: debug
+            path: '%kernel.logs_dir%/employee/ehealth/employee.log'
+            channels: [ 'employee_ehealth' ]
+        patient_ehealth:
+            type: rotating_file
+            date_format: 'Y-m-d'
+            max_files: 60
+            level: debug
+            path: '%kernel.logs_dir%/patient/ehealth/patient.log'
+            channels: [ 'patient_ehealth' ]
+        declaration_ehealth:
+            type: rotating_file
+            date_format: 'Y-m-d'
+            max_files: 60
+            level: debug
+            path: '%kernel.logs_dir%/patient/declaration_api.log'
+            channels: [ 'declaration_api' ]
+        patient_user_api:
+            type: rotating_file
+            date_format: 'Y-m-d'
+            max_files: 60
+            level: debug
+            path: '%kernel.logs_dir%/patient/patient_api.log'
+            channels: [ 'patient_user_api' ]
+        appointment_api:
+            type: rotating_file
+            date_format: 'Y-m-d'
+            max_files: 60
+            level: debug
+            path: '%kernel.logs_dir%/patient/appointment_api.log'
+            channels: [ 'appointment_api' ]
+        appointment_email_cron:
+            type: rotating_file
+            date_format: 'Y-m-d'
+            max_files: 60
+            level: debug
+            path: '%kernel.logs_dir%/cron/appointment/send_email.log'
+            channels: [ 'appointment_email_cron' ]
+        patient_service_result_api:
+            type: rotating_file
+            date_format: 'Y-m-d'
+            max_files: 60
+            level: debug
+            path: '%kernel.logs_dir%/patient/service_result_api.log'
+            channels: [ 'patient_service_result_api' ]
+
+    channels:
+        - catalog_api
+        - employee_ehealth
+        - patient_ehealth
+        - declaration_api
+        - patient_user_api
+        - appointment_api
+        - patient_service_result_api
+        - appointment_email_cron

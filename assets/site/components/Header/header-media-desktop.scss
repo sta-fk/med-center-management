@@ -1,0 +1,146 @@
+@include desktop {
+   nav {
+      @include flexible(row, center, space-between);
+
+      .items-management {
+         .logo {
+            font-family: $font-head;
+            font-size: 29px;
+            text-transform: uppercase;
+            width: 275px;
+            margin-right: 150px;
+
+            .name {
+               font-size: 48px;
+            }
+
+            .link {
+               @include reset-link-style($black);
+            }
+         }
+
+         .js-main-dropdown-btn {
+            display: none;
+         }
+      }
+
+      .js-main-dropdown {
+         @include flexible(row, center, space-between);
+         position: relative;
+         width: 100%;
+
+         #js-id-child-dropdown-btn {
+
+            .link {
+               background-image: linear-gradient(currentColor, currentColor);
+               background-position: 0% 100%;
+               background-repeat: no-repeat;
+               background-size: 0% .5px;
+               transition: background-size .3s;
+
+               &:hover {
+                  background-size: 100% .5px;
+               }
+
+               &:hover:before {
+                  content: none;
+               }
+            }
+         }
+
+         .js-child-dropdown {
+            position: absolute;
+            z-index: 6;
+
+            .item,
+            .item--login {
+               display: none;
+            }
+         }
+
+         .js-child-dropdown.responsive {
+            position: absolute;
+            top: 35px;
+            right: -45px;
+            padding: 30px;
+            z-index: 6;
+            @include base-card(auto, auto, 15px, 0, 30px);
+
+            .item,
+            .item--login {
+               display: block;
+               padding: 10px;
+
+               .link {
+                  &:hover:before {
+                     content: "";
+                     position: absolute;
+                     top: 50%;
+                     left: -15px;
+                     background: $black;
+                     width: 5px;
+                     height: 5px;
+                     border-radius: 100%;
+                     opacity: 0;
+                     @include link-dot();
+                     animation: link--dot .35s forwards;
+                  }
+               }
+            }
+         }
+      }
+
+      .item {
+         font-family: $font-head;
+         font-size: $font-size-items-xxl;
+         cursor: pointer;
+
+         .link {
+            @include reset-link-style($black);
+            position: relative;
+
+            &:hover:before {
+               content: "";
+               position: absolute;
+               top: 40px;
+               background: $black;
+               width: 7px;
+               height: 7px;
+               border-radius: 100%;
+               left: calc(50% - 2px);
+               opacity: 0;
+               @include link-dot();
+               animation: link--dot .35s forwards;
+            }
+         }
+      }
+
+      .item--login {
+         @include flexible(row, center, center);
+         @include reset-link-style($white);
+
+         font-family: $font-head;
+         font-size: $font-size-items-xxl;
+         font-weight: 500;
+         width: 210px;
+         height: 50px;
+         background-color: $blue;
+         border-radius: 28px;
+
+         &:hover {
+            cursor: pointer;
+            animation: item--login--animation .35s forwards;
+         }
+
+         @keyframes item--login--animation {
+            0% {
+               background-color: $blue;
+            }
+
+            100% {
+               background-color: $black;
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,34 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   .content.invalid-declaration.container {
+      @include flexible(row, center, center);
+      width: 100%;
+      height: 60vh;
+
+      .failed-text {
+         h1 {
+            text-align: center;
+            font-size: 24px;
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content.invalid-declaration.container {
+      margin-top: 25px;
+   }
+}
+
+@include mobile {
+   .content.invalid-declaration.container {
+      margin-top: auto;
+
+      .failed-text {
+         h1 {
+            font-size: 20px;
+         }
+      }
+   }
+}

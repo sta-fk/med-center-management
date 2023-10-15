@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        p {
+            margin: 5px 0;
+            padding: 0;
+        }
+
+        h2 {
+            margin: 30px 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border:  1px solid #000000;
+        }
+
+        tr {
+            border-style: solid;
+            border-bottom: 1px solid #000000;
+        }
+
+        td {
+            padding: 10px 15px;
+            border:  1px solid #000000;
+        }
+
+        th {
+            font-size: 10px;
+            font-weight: normal;
+            padding: 10px 15px;
+            border:  1px solid #000000;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p>Замовлення №: {{ data.id }}</p>
+    <p>Дата отримання: {{ data.date }}</p>
+    <p>Пацієнт: {{ data.patientName }}</p>
+    <p>Дата народження: {{ data.birthDate }} ({{ calculate_age(data.birthDate) }})</p>
+    <h2>{{ data.serviceName }}</h2>
+    <table>
+        <tr class="">
+            <th>Дослідження</th>
+            <th>Результат</th>
+            <th>Одиниці</th>
+            <th>Референтні значення</th>
+        </tr>
+        {% for raw in data.result %}
+            {% if raw.children is defined %}
+                <tr>
+                    <td colspan="4"><strong>{{ raw.name }}</strong></td>
+                </tr>
+                {{ render_child(raw.children)|raw }}
+            {% else %}
+                <tr>
+                    <td>{{ raw.name }}</td>
+                    <td style="text-align: center;">{{ raw.result }}</td>
+                    <td style="text-align: center;">{{ format_unit(raw.unit)}}</td>
+                    <td>{{ raw.refer }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
+

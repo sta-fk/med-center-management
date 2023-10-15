@@ -1,0 +1,376 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   .specialist.container.component {
+      @include flexible(row, flex-start, space-between);
+      width: 100%;
+      height: 600px;
+      margin-top: 50px;
+
+      h1 {
+         font-size: 21px;
+         margin: 0 0 10px 0;
+      }
+
+      p {
+         margin: 0;
+         padding: 0;
+      }
+
+      .personal-info {
+         @include base-card(23%, 90%, 20px, 15px 50px 0 0, 30px);
+         @include flexible(column, flex-start, space-between);
+
+         h1 {
+            margin: 0;
+         }
+
+         .media {
+            position: relative;
+            margin-bottom: 30px;
+
+            .btn--back {
+               @include reset-link-style($black);
+               @include link-weight();
+               position: absolute;
+               top: 0;
+               left: 0;
+
+               &:hover {
+                  animation: link--weight .5s forwards;
+               }
+            }
+
+            #img {
+               width: 100%;
+               height: 100%;
+               // border-radius: 25px;
+               border-bottom: 1px solid $black;
+            }
+         }
+
+         .info {
+            @include flexible(column, flex-start, space-between);
+            height: 100%;
+
+            .default.btn {
+               width: 100%;
+            }
+         }
+      }
+
+      .general-info {
+         @include flexible(column, flex-start, space-between);
+         width: 37%;
+         height: 600px;
+         padding: 15px 0;
+
+         .main,
+         .job,
+         .legal {
+            @include base-card(calc(100% - 60px - 50px), 33%, 20px, 0 0 50px 0, 30px);
+         }
+
+         .legal {
+            margin-bottom: 0;
+         }
+      }
+
+      .professional-info {
+         @include flexible(column, flex-start, flex-start);
+         width: 37%;
+         height: 585px;
+         padding: 15px;
+         overflow-y: auto;
+         scrollbar-width: thin;
+
+         .chapter {
+            @include base-card(calc(100% - 60px), auto, 20px, 0 0 50px 0, 30px);
+
+            .header {
+               cursor: pointer;
+            }
+
+            .item {
+               margin-top: 10px;
+
+               &:first-child {
+                  margin-top: 0;
+               }
+            }
+
+            &:last-child {
+               margin-bottom: 0;
+            }
+         }
+      }
+
+      .btn {
+         @include flexible(row, center, center);
+
+         font-family: $font-head;
+         font-size: 20px;
+         font-weight: 500;
+
+         width: 300px;
+         height: 50px;
+         border: none;
+         border-radius: 28px;
+         background-color: $blue;
+
+         &:hover {
+            cursor: pointer;
+            @include default-btn-color();
+            animation: default-btn--color .35s forwards;
+         }
+
+         color: $white;
+         text-decoration: none;
+      }
+   }
+}
+
+@include laptop {
+   .specialist.container.component {
+      h1 {
+         font-size: 18px;
+      }
+
+      .personal-info {
+         .default.btn {
+            font-size: 18px;
+         }
+      }
+   }
+}
+
+@include ipad {
+   .specialist.container.component {
+      @include flexible(column, flex-start, flex-start);
+      height: 100%;
+
+      p {
+         font-size: 18px;
+      }
+
+      .personal-info {
+         @include base-card(calc(100% - 54px), auto, 20px, 0, 27px);
+         @include flexible(row, stretch, flex-start);
+         margin-bottom: 30px;
+
+         .media {
+            margin-bottom: 0;
+            margin-right: 30px;
+            display: inline-block;
+            height: 100%;
+
+            #img {
+               height: 250px;
+            }
+         }
+
+         .info {
+            @include flexible(column, stretch, space-between);
+            height: inherit;
+
+            .full-name {
+               h1 {
+                  font-size: 24px;
+                  display: inline;
+               }
+            }
+
+            .default.btn {
+               height: 36px;
+               width: 260px;
+               border-radius: 13px;
+               border: 1px solid $black;
+               background: none;
+               font-size: 16px;
+
+               &:hover {
+                  animation: none;
+               }
+
+               .btn__link {
+                  @include reset-link-style($black);
+
+                  &:hover {
+                     animation: link--weight .5s forwards;
+                  }
+               }
+            }
+         }
+      }
+
+      .general-info {
+         @include flexible(row, stretch, space-between);
+         width: 100%;
+         height: auto;
+         margin-bottom: 30px;
+
+         .main,
+         .job,
+         .legal {
+            @include base-card(33%, auto, 20px, 0 40px 0 0, 30px);
+            display: inline-block;
+
+         }
+
+         .legal {
+            margin-right: 0;
+         }
+      }
+
+      .professional-info {
+         @include flexible(row, stretch, space-between);
+         width: 100%;
+         height: 250px;
+         overflow: visible;
+         padding: 0;
+
+         .chapter {
+            @include base-card(33%, auto, 20px, 0 40px 0 0, 30px);
+            display: inline-block;
+            overflow-y: auto;
+            scrollbar-width: thin;
+
+            &:last-child {
+               margin-right: 0;
+            }
+         }
+      }
+   }
+}
+
+@media(max-width: 950px) {
+   .specialist.container.component {
+      height: 100%;
+
+      p {
+         font-size: 16px;
+      }
+
+      .personal-info {
+         margin-bottom: 20px;
+
+         .media {
+            #img {
+               height: 200px;
+            }
+         }
+
+         .info {
+            .full-name {
+               h1 {
+                  font-size: 21px;
+               }
+            }
+         }
+      }
+
+      .general-info {
+         margin-bottom: 20px;
+
+         .main,
+         .job,
+         .legal {
+            @include base-card(calc(100% - 46px), auto, 20px, 0 30px 0 0, 23px);
+
+            &:last-child {
+               margin-right: 0;
+            }
+         }
+      }
+
+      .professional-info {
+         height: 200px;
+
+         .chapter {
+            @include base-card(calc(100% - 46px), auto, 20px, 0 30px 0 0, 23px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+         }
+      }
+   }
+}
+
+@include tablet {
+   .specialist.container.component {
+      height: auto;
+
+      .btn {
+         width: 100%;
+      }
+
+      .personal-info {
+         @include flexible(column, flex-start, space-between);
+         @include base-card(calc(100% - 54px), auto, 20px, 0, 27px);
+         margin-bottom: 50px;
+
+         .info {
+            width: 100%;
+
+            .full-name {
+               h1 {
+                  display: block;
+               }
+            }
+
+            .default.btn {
+               width: 100%;
+            }
+         }
+
+         .full-name,
+         .brief,
+         .contacts {
+            margin: 0 0 30px 0;
+         }
+
+         .media {
+            margin-bottom: 30px;
+            display: block;
+            height: 100%;
+            width: 100%;
+
+            #img {
+               width: 100%;
+               height: 100%;
+            }
+         }
+      }
+
+      .general-info {
+         @include flexible(column, flex-start, flex-start);
+         margin: 0 0 50px 0;
+
+         .main,
+         .job,
+         .legal {
+            @include base-card(calc(100% - 60px), auto, 20px, 0 0 30px 0, 30px);
+            display: block;
+         }
+
+         .legal {
+            margin-bottom: 0;
+         }
+      }
+
+      .professional-info {
+         @include flexible(column, flex-start, flex-start);
+         height: auto;
+         margin: 0;
+
+         .chapter {
+            @include base-card(calc(100% - 60px), auto, 20px, 0 0 30px 0, 30px);
+            overflow: visible;
+            display: block;
+
+            &:last-child {
+               margin-bottom: 0;
+            }
+         }
+      }
+   }
+}

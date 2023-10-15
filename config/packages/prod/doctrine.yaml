@@ -1,0 +1,167 @@
+doctrine:
+  dbal:
+    url: '%env(resolve:DATABASE_URL)%'
+    driver: 'pdo_mysql'
+    server_version: '5.5'
+    charset: utf8
+    types:
+      phone_number: Misd\PhoneNumberBundle\Doctrine\DBAL\Types\PhoneNumberType
+      uuid: Symfony\Bridge\Doctrine\Types\UuidType
+  orm:
+    auto_generate_proxy_classes: false
+    entity_managers:
+      default:
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        dql:
+          datetime_functions:
+            DATE_FORMAT: DoctrineExtensions\Query\Mysql\DateFormat
+            DAY: DoctrineExtensions\Query\Mysql\Day
+            MONTH: DoctrineExtensions\Query\Mysql\Month
+            YEAR: DoctrineExtensions\Query\Mysql\Year
+        mappings:
+          News:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/News/Entity'
+            prefix: 'App\News\Entity'
+            alias: News
+          Department:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Department/Entity'
+            prefix: 'App\Department\Entity'
+            alias: Department
+          Service:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Catalog/Entity'
+            prefix: 'App\Catalog\Entity'
+            alias: Service
+          ServiceResult:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Catalog/Entity'
+            prefix: 'App\Catalog\Entity'
+            alias: ServiceResult
+          Employee:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Employee/Entity'
+            prefix: 'App\Employee\Entity'
+            alias: Employee
+          EmployeeInfo:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Employee/Entity'
+            prefix: 'App\Employee\Entity'
+            alias: EmployeeInfo
+          EmployeeEducation:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Employee/Entity'
+            prefix: 'App\Employee\Entity'
+            alias: EmployeeEducation
+          EmployeeContacts:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Employee/Entity'
+            prefix: 'App\Employee\Entity'
+            alias: EmployeeContacts
+          EmployeeQualification:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Employee/Entity'
+            prefix: 'App\Employee\Entity'
+            alias: EmployeeQualification
+          EmployeeSpeciality:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Employee/Entity'
+            prefix: 'App\Employee\Entity'
+            alias: EmployeeSpeciality
+          Division:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Division/Entity'
+            prefix: 'App\Division\Entity'
+            alias: Division
+          LegalEntity:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/LegalEntity/Entity'
+            prefix: 'App\LegalEntity\Entity'
+            alias: LegalEntity
+          PatientUser:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/PatientUser/Entity'
+            prefix: 'App\PatientUser\Entity'
+            alias: PatientUser
+          PatientProfile:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/PatientUser/Entity'
+            prefix: 'App\PatientUser\Entity'
+            alias: PatientProfile
+          PatientEhealth:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Patient/Entity'
+            prefix: 'App\Patient\Entity'
+            alias: PatientEhealth
+          PatientContacts:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/PatientUser/Entity'
+            prefix: 'App\PatientUser\Entity'
+            alias: PatientContacts
+          PatientAddress:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/PatientUser/Entity'
+            prefix: 'App\PatientUser\Entity'
+            alias: PatientAddress
+          PatientAdditionalInfo:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/PatientUser/Entity'
+            prefix: 'App\PatientUser\Entity'
+            alias: PatientAdditionalInfo
+          PatientAppointmentResult:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/PatientUser/Entity'
+            prefix: 'App\PatientUser\Entity'
+            alias: PatientAppointmentResult
+          Appointments:
+            is_bundle: false
+            type: annotation
+            dir: '%kernel.project_dir%/src/Appointments/Entity'
+            prefix: 'App\Appointments\Entity'
+            alias: Appointments
+
+#when@test:
+#    doctrine:
+#        dbal:
+#            # "TEST_TOKEN" is typically set by ParaTest
+#            dbname_suffix: '_test%env(default::TEST_TOKEN)%'
+#
+#when@prod:
+#    doctrine:
+#        orm:
+#            auto_generate_proxy_classes: false
+#            query_cache_driver:
+#                type: pool
+#                pool: doctrine.system_cache_pool
+#            result_cache_driver:
+#                type: pool
+#                pool: doctrine.result_cache_pool
+#
+#    framework:
+#        cache:
+#            pools:
+#                doctrine.result_cache_pool:
+#                    adapter: cache.app
+#                doctrine.system_cache_pool:
+#                    adapter: cache.system

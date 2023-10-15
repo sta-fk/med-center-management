@@ -1,0 +1,33 @@
+@include laptop {
+   nav {
+      .items-management {
+         width: 375px;
+
+         .logo {
+            font-size: 22px;
+            width: 200px;
+            margin-right: 250px;
+
+            .name {
+               font-size: 36px;
+            }
+         }
+      }
+
+      .item {
+         font-size: $font-size-items-xl;
+
+         .link:hover:before {
+            top: 35px;
+            width: 5px;
+            height: 5px;
+         }
+      }
+
+      .item--login {
+         font-size: $font-size-items-xl;
+         width: 145px;
+         height: 37px;
+      }
+   }
+}

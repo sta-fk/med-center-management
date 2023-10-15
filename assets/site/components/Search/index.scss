@@ -1,0 +1,333 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   .content {
+      .overlay {
+         position: absolute;
+         background: rgba($black, 0.5);
+         width: 100%;
+         height: 100%;
+         z-index: 1;
+         top: 0;
+         left: 0;
+      }
+
+      .search {
+         @include flexible(row, center, flex-start);
+         position: relative;
+         z-index: 2;
+
+         .search__input {
+            @include base-card(600px, 56px, 30px, 0, 0 10px 0 30px);
+            font-size: 20px;
+            border: none;
+            outline: none;
+            color: rgba($black, 0.5);
+
+            &:focus {
+               color: $black;
+            }
+         }
+
+         .search__icon {
+            @include base-card-media-img(25px, 25px, 20px, 0 0 0 -50px, 0);
+            border: none;
+            position: absolute;
+            top: auto;
+            right: 17px;
+
+            #search__img {
+               width: 100%;
+               height: auto;
+            }
+         }
+
+         .result {
+            @include base-card(580px, 300px, 30px, 0, 30px);
+            position: absolute;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            top: 86px;
+            left: 0;
+
+            .item {
+               &__service {
+                  @include flexible(row, flex-start, space-between);
+                  border-bottom: 1px solid $black;
+                  width: 100%;
+                  margin: 15px 0;
+                  padding-bottom: 5px;
+
+                  .header {
+                     color: rgba($black, 0.5);
+                  }
+
+                  .name {
+                     width: 80%;
+                  }
+
+                  .price {
+                     width: 15%;
+                  }
+               }
+
+               &__specialist {
+                  @include flexible(row, flex-start, flex-start);
+                  border-bottom: 1px solid $black;
+                  width: 100%;
+                  height: 85px;
+                  margin: 15px 0;
+
+                  &:first-child {
+                     margin-top: 0;
+                  }
+
+                  .media {
+                     margin-right: 30px;
+
+                     #img {
+                        width: auto;
+                        height: 85px;
+                     }
+                  }
+
+                  .info {
+                     position: relative;
+                     height: 100%;
+                     width: 100%;
+
+                     .fullname {
+                        font-size: 20px;
+                        font-family: $font-head;
+                        margin-bottom: 5px;
+                     }
+
+                     .brief {
+                        width: 80%;
+                     }
+                  }
+
+                  .link {
+                     @include reset-link-style($black);
+                     @include link-weight();
+                     position: absolute;
+                     padding-bottom: 5px;
+                     bottom: 0;
+                     right: 0;
+
+                     &:hover {
+                        animation: link--weight .5s forwards;
+                        -webkit-animation: link--weight .5s forwards;
+                        -moz-animation: link--weight .5s forwards;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@include laptop {
+   .content {
+      .search {
+         .search__input {
+            @include base-card(450px, 56px, 30px, 0, 0 10px 0 30px);
+         }
+
+         .result {
+            @include base-card(430px, 300px, 30px, 0, 30px);
+
+            .item {
+               &__service {
+                  .name {
+                     width: 75%;
+                  }
+
+                  .price {
+                     width: 20%;
+                  }
+               }
+
+               &__specialist {
+                  height: 100px;
+
+                  .media {
+                     #img {
+                        width: auto;
+                        height: 100px;
+                     }
+                  }
+
+                  .info {
+                     .fullname {
+                        font-size: 18px;
+                     }
+
+                     .brief {
+                        font-size: 14px;
+                     }
+                  }
+
+                  .link {
+                     font-size: 14px;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content {
+      .search {
+         .search__input {
+            @include base-card(100%, 46px, 30px, 0, 0 10px 0 20px);
+         }
+
+         .search__icon {
+            @include base-card-media-img(20px, 20px, 15px, 0, 0);
+            border: none;
+         }
+
+         .result {
+            @include base-card(calc(100% - 60px), 300px, 30px, 0, 30px);
+
+            .item {
+               &__service {
+                  .name {
+                     width: 75%;
+                  }
+
+                  .price {
+                     width: 20%;
+                  }
+               }
+
+               &__specialist {
+                  height: 120px;
+
+                  .media {
+                     #img {
+                        width: auto;
+                        height: 120px;
+                     }
+                  }
+
+                  .info {
+                     .fullname {
+                        font-size: 20px;
+                     }
+
+                     .brief {
+                        font-size: 16px;
+                     }
+                  }
+
+                  .link {
+                     font-size: 16px;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@include tablet {
+   .content {
+      .search {
+         .result {
+            .item {
+               &__service {
+                  .name {
+                     width: 75%;
+                  }
+
+                  .price {
+                     width: 20%;
+                  }
+               }
+
+               &__specialist {
+                  height: 90px;
+
+                  .media {
+                     #img {
+                        width: auto;
+                        height: 90px;
+                     }
+                  }
+
+                  .info {
+                     .fullname {
+                        font-size: 18px;
+                     }
+
+                     .brief {
+                        font-size: 14px;
+                     }
+                  }
+
+                  .link {
+                     font-size: 14px;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@include mobile {
+   .content {
+      .search {
+         .result {
+            @include base-card(calc(100% - 40px), 300px, 30px, 0, 20px);
+
+            .item {
+               &__service {
+                  font-size: 14px;
+
+                  .name {
+                     width: 70%;
+                  }
+
+                  .price {
+                     width: 25%;
+                  }
+               }
+
+               &__specialist {
+                  height: 70px;
+
+                  .media {
+                     margin-right: 15px;
+
+                     #img {
+                        width: auto;
+                        height: 70px;
+                     }
+                  }
+
+                  .info {
+                     .fullname {
+                        font-size: 16px;
+                        margin-bottom: 3px;
+                     }
+
+                     .brief {
+                        font-size: 12px;
+                     }
+                  }
+
+                  .link {
+                     font-size: 12px;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

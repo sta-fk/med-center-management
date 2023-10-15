@@ -1,0 +1,174 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   .content.registration.container {
+      width: 100%;
+      margin-top: 50px;
+
+      h1 {
+         text-align: center;
+      }
+
+      .reg-form {
+         text-align: center;
+
+         .password-rating-container {
+            width: 350px;
+            margin: 0 auto 10px;
+
+            .password-rating {
+               height: 5px;
+               border-radius: 5px;
+            }
+         }
+
+         .reg-additional {
+            margin: 20px 0 0 0;
+
+            .invalid-data,
+            .valid-data {
+               width: 350px;
+               margin: 0 auto;
+
+               font-family: $font-head;
+               font-size: 16px;
+               font-weight: 500;
+
+               text-align: center;
+               color: $red;
+            }
+
+            .valid-data {
+               color: $green;
+            }
+
+            .login-link {
+               margin: 0;
+
+               .link {
+                  @include reset-link-style($black);
+                  width: 350px;
+                  margin: 0 auto;
+
+                  font-family: $font-head;
+                  font-size: 16px;
+                  font-weight: 500;
+
+                  background-image: linear-gradient(currentColor, currentColor);
+                  background-position: 0% 100%;
+                  background-repeat: no-repeat;
+                  background-size: 0% .5px;
+                  transition: background-size .3s;
+
+                  &:hover {
+                     background-size: 100% .5px;
+                  }
+               }
+            }
+         }
+
+         .reg-input {
+            width: 350px;
+            margin: 15px 0;
+            padding: 15px 25px;
+            background: none;
+            border: 1px solid $black;
+            border-radius: 150px;
+            font-size: 20px;
+            color: rgba($black, 0.5);
+
+            &:focus {
+               color: $black;
+            }
+         }
+
+         .error-msg {
+            width: 350px;
+            margin: 0 auto 10px;
+            text-align: left;
+            color: $red;
+         }
+
+         .reg-submit {
+            width: 215px;
+            margin-top: 15px;
+            padding: 15px 25px;
+            background-color: $blue;
+            border: none;
+            border-radius: 125px;
+
+            font-family: $font-head;
+            font-size: 18px;
+            font-weight: 500;
+            color: $white;
+
+            &:hover {
+               cursor: pointer;
+               @include default-btn-color();
+               animation: default-btn--color .35s forwards;
+            }
+
+            &:disabled {
+               border: 1px solid rgba($black, 0.5);
+               background: rgba($black, 0.15);
+               color: rgba($black, 0.5);
+
+               &:hover {
+                  cursor: auto;
+                  border: 1px solid rgba($black, 0.5) !important;
+                  background: rgba($black, 0.15) !important;
+                  color: rgba($black, 0.5) !important;
+               }
+            }
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content.registration.container {
+      width: 100%;
+      margin-top: 50px;
+   }
+}
+
+@include mobile {
+   .content.registration.container {
+      width: 100%;
+      margin-top: 30px;
+
+      .reg-form {
+         text-align: center;
+         width: 100%;
+
+         .password-rating-container {
+            width: auto;
+            margin: 5px auto 10px;
+            padding: 0 15px;
+         }
+
+         .reg-additional {
+            .invalid-data {
+               width: auto;
+            }
+
+            .login-link {
+               .link {
+                  width: auto;
+               }
+            }
+         }
+
+         .reg-input {
+            width: calc(100% - 50px);
+            margin: 10px 0;
+         }
+
+         .error-msg {
+            width: auto;
+            padding: 0 25px;
+            margin-bottom: 15px;
+         }
+      }
+   }
+}

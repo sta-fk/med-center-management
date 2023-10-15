@@ -1,0 +1,48 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   footer {
+      @include flexible(column, center, center);
+      height: 120px;
+      margin-top: 50px;
+
+      .item {
+         margin: 0;
+         text-align: center;
+
+         .tel {
+            @include reset-link-style($black);
+            @include link-weight();
+
+            &:hover {
+               animation: link--weight .5s forwards;
+            }
+         }
+      }
+   }
+}
+
+@include mobile {
+   footer {
+      .item {
+         font-size: 14px;
+
+         .tel {
+            display: block;
+            margin: 5px 0;
+            font-size: 16px;
+            text-decoration: underline;
+         }
+      }
+   }
+}
+
+// @media (min-height: 1050px) {
+//    footer {
+//       position: absolute;
+//       left: 0;
+//       bottom: 0;
+//       width: 100%;
+//       margin-bottom: 15px;
+//    }
+// }

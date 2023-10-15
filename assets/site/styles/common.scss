@@ -1,0 +1,78 @@
+$gradient-opacity: .95;
+$gradient-radius: 45%;
+
+// default -- del after styling, enter before
+img {
+   width: 100px;
+   height: 100px;
+}
+
+@include desktop {
+   html {
+      min-height: 100%;
+   }
+
+   body {
+      font-family: $font-body;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: normal;
+      font-display: swap;
+      color: $black;
+      padding: 30px 115px;
+   }
+
+   h1 {
+      font-family: $font-head;
+      font-weight: 400;
+      font-size: 40px;
+   }
+
+   h3 {
+      font-family: $font-head;
+      font-weight: 400;
+   }
+
+   .base {
+      @include big-background();
+   }
+
+   .small-page {
+      @include big-background();
+   }
+
+   .big-page {
+      @include big-background();
+      background-size: 100% 100% !important;
+      background-repeat: round;
+   }
+}
+
+@include laptop {
+   body {
+      padding: 30px 90px;
+   }
+}
+
+@include ipad {
+   body {
+      padding: 30px 60px;
+   }
+
+   .base {
+      background-size: 100% 100% !important;
+      background-repeat: round;
+   }
+}
+
+@include tablet {
+   body {
+      padding: 45px;
+   }
+}
+
+@include mobile {
+   body {
+      padding: 25px;
+   }
+}

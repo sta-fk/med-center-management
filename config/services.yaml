@@ -1,0 +1,19 @@
+imports:
+    - { resource: services/ }
+
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/*'
+        exclude:
+            - '../src/{DependencyInjection,Entity,Kernel.php}'
+            - '../src/{ApiClient,Catalog/Api,Employee/Api,Patient/Api}'
+
+    App\ApiClient\EventSubscriber\AddPaginationHeaders:
+        tags:
+            - { name: kernel.event_listener, event: kernel.response }

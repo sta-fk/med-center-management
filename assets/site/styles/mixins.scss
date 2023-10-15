@@ -1,0 +1,117 @@
+// default -- row, stretch, flex-start
+@mixin flexible($direction, $align, $justify) {
+   display: flex;
+   align-items: $align;
+   justify-content: $justify;
+   flex-direction: $direction;
+}
+
+@mixin h1-p-format() {
+   h1 {
+      padding: 0;
+   }
+
+   p {
+      padding: 25px 0;
+      font-size: 20px;
+   }
+}
+
+@mixin full-screen-content() {
+   width: 100%;
+   height: 100vh;
+}
+
+@mixin reset-link-style($color) {
+   color: $color;
+   text-decoration: none;
+}
+
+// default -- 140px, 240px, 20px, 0 50px, 35px
+@mixin base-card($width, $height, $radius, $margin, $padding) {
+   border-radius: $radius;
+   margin: $margin;
+   width: $width;
+   height: $height;
+   padding: $padding;
+   border-width: 1px;
+   border-color: $black;
+   background: #FFFFFF;
+   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+}
+
+@mixin base-card-media-img($width, $height, $radius, $margin, $padding) {
+   border-radius: $radius;
+   margin: $margin;
+   width: $width;
+   height: $height;
+   padding: $padding;
+   border: 1px solid $black;
+   background: #FFFFFF;
+}
+
+@mixin text-cut($rows) {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   box-orient: vertical;
+   line-clamp: $rows;
+   display: -moz-box;
+   -moz-box-orient: vertical;
+   display: -webkit-box;
+   -webkit-line-clamp: $rows;
+   -webkit-box-orient: vertical;
+}
+
+@mixin big-background() {
+   background:
+      radial-gradient(circle at 0 0,
+         rgba($green, .95),
+         rgba(255, 0, 0, 0) 20%),
+      radial-gradient(circle at 72% 0,
+         rgba($purple, .95),
+         rgba(0, 0, 255, 0) 20%),
+      radial-gradient(circle at 100% 25%,
+         rgba($light-blue, .95),
+         rgba(0, 255, 0, 0) 20%),
+      radial-gradient(circle at 30% 30%,
+         rgba($yellow, 1),
+         rgba(0, 255, 0, 0) 35%),
+      radial-gradient(circle at 60% 40%,
+         rgba($peach, 1),
+         rgba(0, 255, 0, 0) 40%),
+      radial-gradient(circle at 0 65%,
+         rgba($green, .9),
+         rgba(0, 255, 0, 0) 25%),
+      radial-gradient(circle at 80% 60%,
+         rgba($purple, .95),
+         rgba(0, 255, 0, 0) 20%),
+      radial-gradient(circle at 50% 70%,
+         rgba($yellow, 1),
+         rgba(0, 255, 0, 0) 35%),
+      radial-gradient(circle at 0 100%,
+         rgba($blue, .6),
+         rgba(0, 255, 0, 0) 35%),
+      radial-gradient(circle at 50% 100%,
+         rgba($peach, 1),
+         rgba(0, 255, 0, 0) 40%),
+      radial-gradient(circle at 100% 100%,
+         rgba($green, .9),
+         rgba(0, 255, 0, 0) 25%) $white;
+   background-size: 100% 2560px;
+}
+
+@mixin small-background() {
+   background:
+      radial-gradient(circle at 0 0,
+         rgba($green, $gradient-opacity),
+         rgba(255, 0, 0, 0) $gradient-radius),
+      radial-gradient(circle at 72% 0,
+         rgba($purple, $gradient-opacity),
+         rgba(0, 0, 255, 0) $gradient-radius),
+      radial-gradient(circle at 100% 100%,
+         rgba($light-blue, $gradient-opacity),
+         rgba(0, 255, 0, 0) $gradient-radius),
+      radial-gradient(circle at 25% 95%,
+         rgba($yellow, $gradient-opacity),
+         rgba(0, 255, 0, 0) $gradient-radius) $white;
+}

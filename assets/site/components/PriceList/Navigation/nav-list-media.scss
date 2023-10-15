@@ -1,0 +1,22 @@
+@import '../../../styles/index.scss';
+
+@include desktop {
+   .content.price-list {
+      nav {
+         height: 620px;
+         width: 335px;
+         margin-right: 50px;
+         padding: 15px;
+         overflow-y: auto;
+         scrollbar-width: thin;
+      }
+   }
+}
+
+@include ipad {
+   .content.price-list {
+      nav {
+         width: 300px;
+      }
+   }
+}

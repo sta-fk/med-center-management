@@ -1,0 +1,15 @@
+{% for parent in raw %}
+    {% if parent.children is defined %}
+        <tr>
+            <td style="padding-left: 30px" colspan="4"><strong>{{ parent.name }}</strong></td>
+        </tr>
+        {{ render_child(parent.children)|raw }}
+    {% else %}
+        <tr>
+            <td style="padding-left: 50px;">{{ parent.name }}</td>
+            <td style="text-align: center;">{{ parent.result }}</td>
+            <td style="text-align: center;">{{ format_unit(parent.unit)}}</td>
+            <td>{{ parent.refer }}</td>
+        </tr>
+    {% endif %}
+{% endfor %}

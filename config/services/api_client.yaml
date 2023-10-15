@@ -1,0 +1,30 @@
+services:
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+  App\ApiClient\AbstractClient:
+    abstract: true
+    arguments:
+      $baseUrl: 'https://%env(EHEALTH_API_URL)%/api'
+      $secret: '%env(EHEALTH_API_SECRET)%'
+
+  App\Patient\Api\PatientClient:
+    parent: App\ApiClient\AbstractClient
+    arguments:
+      $url: 'cabinet'
+    autowire: true
+    autoconfigure: false
+
+  App\Employee\Api\EmployeeClient:
+    parent: App\ApiClient\AbstractClient
+    autowire: true
+    autoconfigure: false
+
+  App\Patient\Api\DeclarationClient:
+    parent: App\ApiClient\AbstractClient
+    arguments:
+      $url: 'cabinet'
+    autowire: true
+    autoconfigure: false
+
