@@ -1,0 +1,10 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    paths:
+        'src/Authorization/Resources/views': ~
+        'src/PatientUser/Resources/views': ~
+        'src/Appointments/Resources/views': ~
+
+when@test:
+    twig:
+        strict_variables: true

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        p {
+            margin: 5px 0;
+            padding: 0;
+        }
+
+        h2 {
+            margin: 30px 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border:  1px solid #000000;
+        }
+
+        tr {
+            border-style: solid;
+            border-bottom: 1px solid #000000;
+        }
+
+        td {
+            padding: 10px 15px;
+            border:  1px solid #000000;
+        }
+
+        th {
+            font-size: 10px;
+            font-weight: normal;
+            padding: 10px 15px;
+            border:  1px solid #000000;
+            text-align: left;
+        }
+    </style>
+    <title>Нагадування на завтра</title>
+</head>
+<body>
+<div class="container">
+    <h2>На завтра у вас заплановані візити в клініці NoName</h2>
+    <table>
+        <tr>
+            <th>Процедура</th>
+            <th>Час</th>
+            <th>Тривалість</th>
+            <th>Лікар</th>
+            <th>Контактний телефон лікаря</th>
+        </tr>
+        {% for ap in appointments %}
+            <tr>
+                <td>{{ ap.service.first.name }}</td>
+                <td>{{ ap.time.format('H:i') }}</td>
+                <td>{{ format_service_duration(ap.service.first.duration) }}</td>
+                <td>
+                    {{ ap.employee.first.employeeInfo.firstName }}
+                    {{ ap.employee.first.employeeInfo.lastName }}
+                </td>
+                <td>
+                    {% for contacts in ap.employee.first.employeeInfo.phones %}
+                        {{ format_phone_number(contacts.phoneNumber) }}
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <h3>Дякуємо, що обираєте нас!</h3>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+@import '../../../styles/index.scss';
+
+@include desktop {
+   .content.price-list.list {
+      @include base-card(912px, 580px, 20px, 0, 25px);
+      margin-top: 15px;
+      overflow-y: scroll;
+      scrollbar-width: thin;
+   }
+}
+
+@media(max-width: 815px) {
+   .content.price-list.list {
+      overflow-y: scroll;
+   }
+}
+
+@include mobile {
+   .content.price-list.list {
+      @include base-card(auto, 50vh, 20px, 0, 25px);
+   }
+}

@@ -1,0 +1,17 @@
+export const HOME_URL = '/';
+export const NEWS_URL = '/news';
+export const SPECIALISTS_BY_DEPARTMENTS_URL = '/specialists';
+export const SPECIALIST_URL = '/specialists/:departmentSlug/:employeeSlug';
+export const SERVICE_DEPARTMENTS_URL = '/departments';
+export const SERVICES_BY_DEPARTMENTS_URL = '/departments/:departmentSlug/services';
+export const PRICE_LIST_URL = '/price-list';
+export const LOGIN_URL = '/login';
+export const SIGN_UP_URL = '/sign-up';
+export const PENDING_SIGN_UP_URL = '/pending-signup-confirm';
+export const SUCCESS_SIGN_UP_URL = '/success-signup';
+export const PROFILE_URL = '/profile';
+export const CREATE_PROFILE_URL = '/create-profile';
+export const PROFILE_DECLARATION_URL = '/profile/declaration';
+export const CUSTOM_APPOINTMENT_URL = '/:departmentSlug/:employeeSlug/make-appointment';
+export const APPOINTMENT_URL = '/make-appointment';
+export const SUCCESS_APPOINTMENT_URL = '/success-appointment';

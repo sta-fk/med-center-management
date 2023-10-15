@@ -1,0 +1,25 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   .content.sp-department.container {
+      .sp-department-block {
+         @include flexible(row, flex-start, flex-start);
+      }
+   }
+}
+
+@include laptop {
+   .content.sp-department.container {
+      .sp-department-block {
+         margin-top: 25px;
+      }
+   }
+}
+
+@include tablet {
+   .content.sp-department.container {
+      .sp-department-block {
+         @include flexible(column, flex-start, flex-start);
+      }
+   }
+}

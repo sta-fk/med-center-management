@@ -1,0 +1,44 @@
+@import '../../../styles/index.scss';
+
+@include desktop {
+   .content.price-list {
+      .parent {
+         @include base-card(auto, auto, 35px, 20px 0, 10px 30px);
+         @include flexible(row, center, space-between);
+
+         .name {
+            @include text-cut(1);
+         }
+
+         cursor: pointer;
+         font-size: 18px;
+
+         &:hover {
+            animation: link--weight .5s forwards;
+
+            .name {
+               @include text-cut(none);
+            }
+         }
+
+         &.active {
+            background: $green;
+
+            // outline: 4px solid $green;
+            // outline-offset: -4px;
+            .name {
+               @include text-cut(none);
+            }
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content.price-list {
+      .parent {
+         @include base-card(auto, 35px, 35px, 25px 0, 5px 25px);
+         font-size: 16px;
+      }
+   }
+}

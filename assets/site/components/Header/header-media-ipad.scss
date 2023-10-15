@@ -1,0 +1,130 @@
+$items-padding: 8px 40px;
+
+@include ipad {
+   nav {
+      display: block;
+
+      .items-management {
+         width: 375px;
+
+         .logo {
+            margin-right: 185px;
+         }
+      }
+
+      .item {
+         padding: $items-padding;
+
+         &:hover {
+            animation: items--animation .35s forwards;
+         }
+
+         .link {
+            &:hover:before {
+               content: none !important;
+            }
+         }
+      }
+
+      .items-management {
+         @include flexible(row, center, space-between);
+         width: 100%;
+      }
+
+      .js-main-dropdown {
+         @include flexible(column, flex-end, center);
+         border-right: 1px solid $black;
+
+         .item,
+         .item--login {
+            display: none;
+         }
+      }
+
+
+      .js-main-dropdown .item--login {
+         font-family: $font-head;
+         font-size: $font-size-items-xl;
+         color: $black;
+         background: none;
+         font-weight: 400;
+         width: auto;
+         height: auto;
+         padding: $items-padding;
+
+         &:hover {
+            animation: items--animation .35s forwards;
+         }
+
+         .link--login {
+            @include reset-link-style($black);
+         }
+      }
+
+      .js-main-dropdown-btn {
+         display: block !important;
+         font-family: $font-head;
+         font-size: $font-size-items-xl;
+         color: $white;
+         font-weight: 500;
+         width: 145px;
+         height: 37px;
+         background-color: $blue;
+         border: none;
+         border-radius: 28px;
+
+         &:hover {
+            cursor: pointer;
+            animation: item--login--animation .35s forwards;
+         }
+      }
+
+      .js-main-dropdown.responsive {
+
+         .item,
+         .item--login {
+            display: block;
+         }
+
+         .js-child-dropdown {
+            position: absolute;
+
+            .item,
+            .item--login {
+               display: none;
+            }
+         }
+
+         .js-child-dropdown.responsive {
+            position: relative;
+            top: auto;
+            right: 0;
+            padding: 0;
+            margin: 0;
+            z-index: auto;
+            background: none;
+            box-shadow: none;
+
+            .item,
+            .item--login {
+               display: block;
+               width: auto;
+               height: auto;
+               margin: 0;
+               padding: $items-padding;
+               text-align: right;
+            }
+         }
+      }
+
+      @keyframes items--animation {
+         0% {
+            font-weight: 400;
+         }
+
+         100% {
+            font-weight: 500;
+         }
+      }
+   }
+}

@@ -1,0 +1,119 @@
+@import '../../../styles/index.scss';
+
+@include desktop {
+   .content.specialists.list {
+      @include flexible(column, flex-start, flex-start);
+      margin-top: 15px;
+      padding: 25px 0 0 25px;
+      width: 100%;
+      height: 565px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+
+      .to-top {
+         display: none;
+      }
+
+      .specialists-row {
+         @include flexible(row, flex-start, space-between);
+         width: 100%;
+         margin-bottom: 30px;
+
+         .specialist {
+            @include base-card(100%, 225px, 20px, 0 20px, 20px);
+            @include flexible(column, flex-start, space-between);
+
+            &__info {
+               @include flexible(row, flex-start, space-between);
+               width: 100%;
+
+               h1 {
+                  width: 135px;
+                  font-size: 20px;
+                  margin: 0;
+               }
+
+               .sp__media {
+                  @include base-card-media-img(65px, 65px, 12px, 0 0 0 auto, 0);
+
+                  #sp__img {
+                     height: 100%;
+                     width: 100%;
+                  }
+               }
+            }
+
+            &__speciality {
+               height: 55px;
+               font-size: 15px;
+            }
+
+            &__actions {
+               @include flexible(row, flex-start, space-between);
+               font-size: 15px;
+               width: 100%;
+
+               .sp__appopintment {
+                  border-radius: 7px;
+                  padding: 5px 10px;
+                  border: 1px solid $black;
+                  cursor: pointer;
+               }
+
+               .sp__details {
+                  padding: 5px;
+                  cursor: pointer;
+               }
+
+               .sp__appopintment,
+               .sp__details {
+                  .link {
+                     @include reset-link-style($black);
+                     @include link-weight();
+
+                     &:hover {
+                        animation: link--weight .5s forwards;
+                        -webkit-animation: link--weight .5s forwards;
+                        -moz-animation: link--weight .5s forwards;
+                     }
+                  }
+               }
+            }
+
+            &:last-child {
+               margin-right: 20px;
+            }
+
+            &:first-child {
+               margin-left: 0;
+            }
+         }
+      }
+   }
+}
+
+@include tablet {
+   .content.specialists.list {
+      padding: 15px 5px 15px 15px;
+      height: auto;
+      overflow: visible;
+      width: 100%;
+
+      .to-top {
+         @include base-card(50px, 50px, 50px, 0, 0);
+         @include flexible(row, center, center);
+         background: $green;
+         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+         position: fixed;
+         right: 25px;
+         bottom: 25px;
+         cursor: pointer;
+      }
+
+      .specialists-row {
+         .specialist {
+            @include base-card(100%, 200px, 20px, 0, 20px);
+         }
+      }
+   }
+}

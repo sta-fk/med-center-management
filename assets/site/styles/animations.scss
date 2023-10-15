@@ -1,0 +1,35 @@
+@mixin link-weight() {
+   @keyframes link--weight {
+      0% {
+         font-weight: 400;
+      }
+
+      100% {
+         font-weight: 600;
+      }
+   }
+}
+
+@mixin link-dot() {
+   @keyframes link--dot {
+      0% {
+         opacity: 0;
+      }
+
+      100% {
+         opacity: 1;
+      }
+   }
+}
+
+@mixin default-btn-color() {
+   @keyframes default-btn--color {
+      0% {
+         background-color: $blue;
+      }
+
+      100% {
+         background-color: $black;
+      }
+   }
+}

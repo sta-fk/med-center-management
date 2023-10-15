@@ -1,0 +1,180 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   .content.declaration.container {
+      .view {
+         @include base-card(65%, auto, 30px, 50px auto 0, 30px);
+
+         h1 {
+            font-size: 20px;
+            margin-bottom: 0;
+         }
+
+         .key {
+            font-weight: 600;
+            padding: 15px 0 7px 0;
+         }
+
+         .common {
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            width: 100%;
+            border-bottom: 1px solid $black;
+            font-family: $font-head;
+            font-size: 20px;
+
+            .number {
+               padding: 0 0 5px;
+            }
+
+            .type {
+               padding: 5px 0;
+            }
+
+            .status {
+               padding: 5px 0 0;
+            }
+         }
+
+         .patient {
+            @include flexible(row, flex-start, flex-start);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            width: 100%;
+            border-bottom: 1px solid $black;
+
+            .column1 {
+               width: 65%;
+            }
+
+            .column2 {
+               width: 35%;
+
+               .phone {
+                  margin: 0 0 15px;
+               }
+            }
+         }
+
+         .specialist {
+            @include flexible(row, flex-start, flex-start);
+            flex-direction: row-reverse;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            width: 100%;
+            border-bottom: 1px solid $black;
+
+            .contacts {
+               width: 35%;
+
+               .phone {
+                  margin: 0 0 15px;
+               }
+            }
+
+            .info {
+               width: 65%;
+
+               .name {
+                  margin: 0 0 15px;
+               }
+            }
+         }
+
+         .legal-entity {
+            @include flexible(row, flex-start, flex-start);
+            flex-direction: row-reverse;
+            width: 100%;
+
+            .contacts {
+               width: 35%;
+
+               .phone {
+                  margin: 0 0 15px;
+               }
+            }
+
+            .info {
+               width: 65%;
+
+               .name {
+                  margin: 0 0 15px;
+               }
+            }
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content.declaration.container {
+      .view {
+         @include base-card(calc(100% - 60px), auto, 30px, 50px auto 0, 30px);
+      }
+   }
+}
+
+@include tablet {
+   .content.declaration.container {
+      .view {
+
+         .patient {
+            @include flexible(column, flex-start, flex-start);
+
+            .column1 {
+               width: 100%;
+            }
+
+            .column2 {
+               width: 100%;
+
+               .phone {
+                  margin: 0;
+               }
+            }
+         }
+
+         .specialist {
+            @include flexible(column, flex-start, flex-start);
+            flex-direction: column-reverse;
+
+            .contacts {
+               width: 100%;
+
+               .phone {
+                  margin: 0;
+               }
+            }
+
+            .info {
+               width: 100%;
+
+               .name {
+                  margin: 0;
+               }
+            }
+         }
+
+         .legal-entity {
+            @include flexible(column, flex-start, flex-start);
+            flex-direction: column-reverse;
+
+            .contacts {
+               width: 100%;
+
+               .phone {
+                  margin: 0;
+               }
+            }
+
+            .info {
+               width: 100%;
+
+               .name {
+                  margin: 0;
+               }
+            }
+         }
+      }
+   }
+}

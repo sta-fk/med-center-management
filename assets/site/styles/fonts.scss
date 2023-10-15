@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+@import './vars.scss';
+
+@font-face {
+   font-family: $font-body;
+   src: url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+   font-style: normal;
+   font-weight: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: $font-head;
+   src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+   font-style: normal;
+   font-weight: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: $font-body;
+   src: url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: $font-head;
+   src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
+}

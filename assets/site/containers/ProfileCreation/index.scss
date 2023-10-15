@@ -1,0 +1,185 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   .content.profile-creation.container {
+      .profile-form {
+
+         .cascade.step-1,
+         .cascade.step-2,
+         .cascade.step-3 {
+            font-size: 24px;
+            font-family: $font-head;
+            width: 100%;
+            border-bottom: 1px solid $black;
+            padding: 30px 0;
+            margin-bottom: 15px;
+
+            .number {
+               @include base-card(56px, 56px, 50%, 0 30px 0 0, 0);
+               display: inline-block;
+               line-height: 56px;
+               text-align: center;
+            }
+         }
+
+         .profile-input {
+            @include base-card(calc(35%), 56px, 30px, 15px 0 35px, 0 10px 0 30px);
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            color: rgba($black, 0.5);
+
+            &:focus {
+               color: $black;
+            }
+         }
+
+         select,
+         input[type=date] {
+            @include base-card(calc(35%), 56px, 7px, 15px 0 35px, 0 10px 0 30px);
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding-right: 25px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            color: rgba($black, 0.5);
+
+            &:focus {
+               color: $black;
+            }
+         }
+
+         .error-msg {
+            color: $red;
+            padding: 0 0 0 30px;
+            margin: -25px 0 10px 0;
+         }
+
+         label {
+            display: block;
+            margin: 25px 0 0;
+            padding: 0 0 0 30px;
+            font-size: 20px;
+            font-family: $font-head;
+         }
+
+         fieldset {
+            border-radius: 5px;
+            border: 1px solid rgba($black, 0.5);
+            margin: 30px 0;
+            width: calc(35%);
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+            legend {
+               font-size: 20px;
+               font-family: $font-head;
+               padding: 0 10px;
+            }
+
+            label {
+               display: inline-block;
+               margin: 0;
+               padding: 5px 0 5px 10px;
+               font-size: 16px;
+            }
+         }
+
+         .profile-submit {
+            width: 215px;
+            margin-top: 15px;
+            padding: 15px 25px;
+            background-color: $blue;
+            border: none;
+            border-radius: 125px;
+
+            font-family: $font-head;
+            font-size: 18px;
+            font-weight: 500;
+            color: $white;
+
+            &:hover {
+               cursor: pointer;
+               @include default-btn-color();
+               animation: default-btn--color .35s forwards;
+            }
+
+            &:disabled {
+               border: 1px solid rgba($black, 0.5);
+               background: rgba($black, 0.15);
+               color: rgba($black, 0.5);
+
+               &:hover {
+                  cursor: auto;
+                  border: 1px solid rgba($black, 0.5) !important;
+                  background: rgba($black, 0.15) !important;
+                  color: rgba($black, 0.5) !important;
+               }
+            }
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content.profile-creation.container {
+      .profile-form {
+         width: 100%;
+
+         .profile-input {
+            @include base-card(calc(60%), 56px, 30px, 15px 0 35px, 0 10px 0 30px);
+            font-size: 18px;
+         }
+
+         select,
+         input[type=date] {
+            @include base-card(calc(60%), 56px, 7px, 15px 0 35px, 0 10px 0 30px);
+            font-size: 18px;
+         }
+
+         fieldset {
+            width: calc(60%);
+         }
+      }
+   }
+}
+
+@include tablet {
+   .content.profile-creation.container {
+      .profile-form {
+         width: 100%;
+
+         .profile-input {
+            @include base-card(calc(100%), 56px, 30px, 15px 0 35px, 0 10px 0 30px);
+            font-size: 18px;
+         }
+
+         select,
+         input[type=date] {
+            @include base-card(calc(100%), 56px, 7px, 15px 0 35px, 0 10px 0 30px);
+         }
+
+         fieldset {
+            width: calc(100%);
+
+            legend {
+               font-size: 18px;
+            }
+         }
+
+         .profile-submit {
+            display: block;
+            margin: 30px auto;
+         }
+      }
+   }
+}

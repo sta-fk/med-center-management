@@ -1,0 +1,64 @@
+controllers_home:
+    resource: ../../src/Spa/Controller/
+    type: annotation
+
+controllers_catalog_api:
+    resource: ../../src/Catalog/Controller/Api/
+    type: annotation
+    prefix: api/
+
+controllers_employee_api:
+    resource: ../../src/Employee/Controller/Api/
+    type: annotation
+    prefix: api/
+
+controllers_employee_ehealth:
+    resource: ../../src/Employee/Controller/Ehealth/
+    type: annotation
+    prefix: api/ehealth/
+
+controllers_employee_admin:
+    resource: ../../src/Employee/Controller/Admin/
+    type: annotation
+    prefix: admin/
+
+controllers_news_api:
+    resource: ../../src/News/Controller/Api/
+    type: annotation
+    prefix: api/
+
+controllers_auth_api:
+    resource: ../../src/Authorization/Controller/Api/
+    type: annotation
+    prefix: api/
+
+controllers_patient_account_ehealth:
+    resource: ../../src/Patient/Controller/Ehealth/
+    type: annotation
+    prefix: api/ehealth/patient
+
+controllers_patient:
+    resource: ../../src/PatientUser/Controller/Api/
+    type: annotation
+    prefix: api/patient
+
+controllers_department:
+    resource: ../../src/Department/Controller/Api/
+    type: annotation
+    prefix: api/
+
+controllers_search:
+    resource: ../../src/Search/Controller/Api/
+    type: annotation
+    prefix: api/search
+
+controllers_patient_appointments:
+    resource: ../../src/Appointments/Controller/Api/PatientAppointmentsController.php
+    type: annotation
+    prefix: api/patient
+
+controllers_appointments:
+    resource: ../../src/Appointments/Controller/Api/AppointmentsController.php
+    type: annotation
+    prefix: api/appointments
+

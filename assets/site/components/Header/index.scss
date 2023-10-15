@@ -1,0 +1,11 @@
+@import '../../styles/index.scss';
+
+$font-size-items-xxl: 20px;
+$font-size-items-xl: 18px;
+
+header {
+   @import './header-media-desktop.scss';
+   @import './header-media-laptop.scss';
+   @import './header-media-ipad.scss';
+   @import './header-media-mobile.scss';
+}

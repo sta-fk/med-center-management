@@ -1,0 +1,151 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   .content.login.container {
+      width: 100%;
+      margin-top: 50px;
+
+      h1 {
+         text-align: center;
+      }
+
+      .login-form {
+         text-align: center;
+
+         .login-additional {
+            margin: 25px 0 0 0;
+
+            .invalid-data {
+               width: 350px;
+               margin: 0 auto;
+
+               font-family: $font-head;
+               font-size: 16px;
+               font-weight: 500;
+
+               text-align: center;
+               color: $red;
+            }
+
+            .reg-link {
+               margin: 0;
+               font-family: $font-head;
+               font-size: 16px;
+               font-weight: 500;
+
+               .link {
+                  @include reset-link-style($black);
+                  width: 350px;
+                  margin: 0 auto;
+
+                  background-image: linear-gradient(currentColor, currentColor);
+                  background-position: 0% 100%;
+                  background-repeat: no-repeat;
+                  background-size: 0% .5px;
+                  transition: background-size .3s;
+
+                  &:hover {
+                     background-size: 100% .5px;
+                  }
+               }
+            }
+         }
+
+         .login-input {
+            width: 350px;
+            margin: 15px 0;
+            padding: 15px 25px;
+            background: none;
+            border: 1px solid $black;
+            border-radius: 150px;
+            font-size: 20px;
+            color: rgba($black, 0.5);
+
+            &:focus {
+               color: $black;
+            }
+         }
+
+         .error-msg {
+            width: 350px;
+            margin: 0 auto 15px;
+            text-align: left;
+            color: $red;
+         }
+
+         .login-submit {
+            width: 215px;
+            margin-top: 15px;
+            padding: 15px 25px;
+            background-color: $blue;
+            border: none;
+            border-radius: 125px;
+
+            font-family: $font-head;
+            font-size: 18px;
+            font-weight: 500;
+            color: $white;
+
+            &:hover {
+               cursor: pointer;
+               @include default-btn-color();
+               animation: default-btn--color .35s forwards;
+            }
+
+            &:disabled {
+               border: 1px solid rgba($black, 0.5);
+               background: rgba($black, 0.15);
+               color: rgba($black, 0.5);
+
+               &:hover {
+                  cursor: auto;
+                  border: 1px solid rgba($black, 0.5) !important;
+                  background: rgba($black, 0.15) !important;
+                  color: rgba($black, 0.5) !important;
+               }
+            }
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content.login.container {
+      width: 100%;
+      margin-top: 50px;
+   }
+}
+
+@include mobile {
+   .content.login.container {
+      width: 100%;
+      margin-top: 30px;
+
+      .login-form {
+         text-align: center;
+         width: 100%;
+
+         .login-additional {
+            .invalid-data {
+               width: auto;
+            }
+
+            .reg-link {
+               .link {
+                  width: auto;
+               }
+            }
+         }
+
+         .login-input {
+            width: calc(100% - 50px);
+            margin: 10px 0;
+         }
+
+         .error-msg {
+            width: auto;
+            padding: 0 25px;
+         }
+      }
+   }
+}

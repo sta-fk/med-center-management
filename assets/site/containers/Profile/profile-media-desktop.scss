@@ -1,0 +1,213 @@
+@include desktop {
+   .content.profile.container {
+      .profile-additional-view {
+         @include flexible(row, flex-start, flex-start);
+      }
+
+      .message {
+         @include flexible(row, center, center);
+         width: calc(100% - 100px);
+         height: 100%;
+         font-size: 20px;
+         text-align: center;
+         font-family: $font-head;
+         font-weight: 400;
+         padding: 0 50px;
+      }
+
+      .additional-view {
+         @include base-card(calc(100% - 60px - 25px), 300px, 30px, 50px 0 0 25px, 30px);
+
+         .appointments {
+            text-align: center;
+
+            h3 {
+               margin: 0;
+               font-family: $font-head;
+               font-size: 36px;
+            }
+
+            table {
+               width: 100%;
+               margin-top: 15px;
+
+               td {
+                  text-align: center;
+                  font-size: 18px;
+               }
+
+               th {
+                  font-family: $font-head;
+                  font-size: 56px;
+                  font-weight: 500;
+                  padding: 10px;
+                  text-align: center;
+               }
+            }
+         }
+      }
+
+      .results-view {
+         @include base-card(calc(100% - 60px), 200px, 30px, 50px 0 0 0, 30px);
+         overflow-y: auto;
+         scrollbar-width: thin;
+
+         .result {
+            @include flexible(row, center, flex-start);
+            width: 100%;
+            margin: 15px 0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid $black;
+
+            &:first-child {
+               margin-top: 0;
+            }
+
+            &:last-child {
+               margin-bottom: 0;
+               padding-bottom: 0;
+               border-bottom: none;
+            }
+
+            a {
+               @include reset-link-style($black);
+               font-size: 20px;
+               font-family: $font-head;
+               font-weight: 400;
+
+               @keyframes link--weight {
+                  0% {
+                     font-weight: 400;
+                  }
+
+                  100% {
+                     font-weight: 500;
+                  }
+               }
+
+               &:hover {
+                  animation: link--weight .5s forwards;
+               }
+            }
+
+            .icon {
+               @include base-card-media-img(30px, 30px, 50px, 0 10px 0 0, 10px);
+
+               #icon {
+                  width: 100%;
+                  height: 100%;
+               }
+            }
+
+            .date {
+               font-size: 14px;
+               margin-top: 5px;
+            }
+         }
+      }
+
+      .profile-view {
+         @include base-card(calc(100% - 25px - 60px), auto, 30px, 50px 25px 0 0, 30px);
+
+         .personality {
+            span {
+               display: block;
+               font-size: 36px;
+               font-family: $font-head;
+            }
+         }
+
+         .common {
+            @include flexible(row, flex-start, flex-start);
+            margin-top: 30px;
+            width: 100%;
+            font-size: 18px;
+
+            .column-1,
+            .column-2 {
+               width: 100%;
+
+               .item {
+                  .key {
+                     font-weight: 600;
+                     padding: 15px 0 7px 0;
+                  }
+               }
+            }
+         }
+      }
+
+      .appointments-view {
+         @include base-card(calc(100% - 60px), 200px, 30px, 50px 0 0 0, 30px);
+         overflow-y: auto;
+         scrollbar-width: thin;
+
+         .appointment {
+            @include flexible(row, flex-start, space-between);
+            padding: 25px 0;
+            border-bottom: 1px solid $black;
+
+            span {
+               display: none;
+            }
+
+            .head {
+
+               &__start,
+               &__employee {
+                  width: 15%;
+               }
+
+               &__name {
+                  width: 40%;
+               }
+
+               &__duration,
+               &__price {
+                  width: 8%;
+               }
+            }
+
+            &:first-child {
+               padding-top: 0;
+            }
+
+            &:last-child {
+               padding-bottom: 0;
+               border: none;
+            }
+
+            &__start {
+               width: 15%;
+
+               .date {
+                  margin-bottom: 7px;
+                  font-size: 18px;
+                  font-family: $font-head;
+               }
+            }
+
+            &__name,
+            &__employee,
+            &__duration,
+            &__price {
+               font-size: 18px;
+               font-family: $font-head;
+            }
+
+            &__name {
+               width: 40%;
+            }
+
+            &__employee {
+               width: 15%;
+            }
+
+            &__duration,
+            &__price {
+               width: 8%;
+            }
+         }
+      }
+   }
+}

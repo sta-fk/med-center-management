@@ -1,0 +1,53 @@
+@include laptop {
+   .content.profile.container {
+      .appointments-view {
+         .appointment {
+            @include flexible(row, flex-start, space-between);
+            padding: 25px 0;
+            border-bottom: 1px solid $black;
+
+            .head {
+               &__name {
+                  width: 35%;
+               }
+
+               &__employee {
+                  width: 17%;
+               }
+
+               &__duration,
+               &__price {
+                  width: 10%;
+               }
+            }
+
+            &__start {
+               .date {
+                  font-size: 16px;
+               }
+            }
+
+            &__name {
+               width: 35%;
+            }
+
+            &__employee {
+               width: 17%;
+            }
+
+            &__duration,
+            &__price {
+               width: 10%;
+            }
+
+            &__name,
+            &__employee,
+            &__duration,
+            &__price {
+               font-size: 16px;
+               font-family: $font-head;
+            }
+         }
+      }
+   }
+}

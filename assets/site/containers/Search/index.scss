@@ -1,0 +1,39 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   .container.search-container {
+      @include flexible(row, center, space-between);
+      margin-top: 25px;
+
+      h1 {
+         width: 600px;
+      }
+   }
+}
+
+@include laptop {
+   .container.search-container {
+      h1 {
+         font-size: 32px;
+         line-height: 42px;
+         width: 450px;
+      }
+   }
+}
+
+@include ipad {
+   .container.search-container {
+      @include flexible(column, stretch, space-between);
+      margin-top: 25px;
+   }
+}
+
+@include mobile {
+   .container.search-container {
+      h1 {
+         font-size: 28px;
+         line-height: auto;
+         width: 100%;
+      }
+   }
+}

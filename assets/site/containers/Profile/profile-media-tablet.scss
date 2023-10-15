@@ -1,0 +1,19 @@
+@include tablet {
+   .content.profile.container {
+      .profile-view {
+         .personality {
+            span {
+               font-size: 24px;
+            }
+         }
+
+         .common {
+            font-size: 16px;
+         }
+      }
+
+      .appointments-view {
+         @include base-card(calc(100% - 60px), 50vh, 30px, 50px 0 0 0, 30px);
+      }
+   }
+}

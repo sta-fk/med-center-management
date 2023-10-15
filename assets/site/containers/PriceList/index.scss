@@ -1,0 +1,10 @@
+@import '../../styles/index.scss';
+
+@include desktop {
+   .content.price-list.container {
+      .price-list.block {
+         @include flexible(row, flex-start, flex-start);
+         margin-top: 25px;
+      }
+   }
+}

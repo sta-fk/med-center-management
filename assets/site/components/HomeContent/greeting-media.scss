@@ -1,0 +1,72 @@
+@include desktop {
+   .content.greeting {
+      @include flexible(row, stretch, space-between);
+      @include full-screen-content();
+      height: 80vh;
+      margin-top: 60px;
+
+      .content__text {
+         @include h1-p-format();
+         width: 40%;
+      }
+
+      .cd__media {
+         text-align: right;
+         width: 60%;
+
+         #cd__img {
+            width: auto;
+            height: 80%;
+         }
+      }
+   }
+}
+
+@include laptop {
+   .content.greeting {
+      height: 90vh;
+
+      .content__text {
+         width: 40%;
+      }
+
+      .cd__media {
+         @include flexible(column, center, flex-start);
+         width: 60%;
+
+         #cd__img {
+            width: 100%;
+            height: auto;
+         }
+      }
+   }
+}
+
+@include ipad {
+   .content.greeting {
+      height: 100%;
+      width: 100%;
+
+      .content__text {
+         width: 75%;
+      }
+
+      .cd__media {
+         display: none;
+      }
+   }
+}
+
+@include mobile {
+   .content.greeting {
+      margin-top: 15px;
+
+      .content__text {
+         h1 {
+            font-size: 36px;
+         }
+
+         width: 100%;
+      }
+   }
+}

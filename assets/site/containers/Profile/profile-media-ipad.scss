@@ -1,0 +1,79 @@
+@include ipad {
+   .content.profile.container {
+      .profile-additional-view {
+         @include flexible(column, flex-start, flex-start);
+      }
+
+      .additional-view {
+         @include base-card(calc(100% - 60px), 300px, 30px, 50px 0 0 0, 30px);
+      }
+
+      .profile-view {
+         @include base-card(calc(100% - 60px), auto, 30px, 50px 0 0 0, 30px);
+
+         .common {
+            font-size: 20px;
+         }
+      }
+
+      .appointments-view {
+         @include base-card(calc(100% - 60px), 50vh, 30px, 50px 0 0 0, 30px);
+         overflow-y: auto;
+         scrollbar-width: thin;
+
+         .appointment {
+            @include flexible(column, flex-start, flex-start);
+            padding: 25px 0;
+            border-bottom: 1px solid $black;
+
+            span {
+               display: inline;
+            }
+
+            &:first-child {
+               display: none;
+            }
+
+            &:nth-child(2) {
+               padding-top: 0;
+            }
+
+            &:last-child {
+               padding-bottom: 0;
+               border: none;
+            }
+
+            &__start {
+               @include flexible(row, flex-start, flex-start);
+               width: 100%;
+
+               .date {
+                  font-size: 18px;
+               }
+
+               .time {
+                  font-size: 18px;
+                  font-family: $font-head;
+                  margin-bottom: 15px;
+               }
+            }
+
+            &__name {
+               font-size: 18px;
+               font-family: $font-head;
+               margin-bottom: 15px;
+               width: 100%;
+            }
+
+            &__start,
+            &__employee,
+            &__duration,
+            &__price {
+               width: 100%;
+               font-size: 18px;
+               font-family: $font-body;
+            }
+         }
+      }
+   }
+}
